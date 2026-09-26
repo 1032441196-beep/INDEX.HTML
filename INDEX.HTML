@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe Técnico de Hardware - Dashboard</title>
+    <!-- CDN de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome para Íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            500: '#0284c7',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col font-sans antialiased">
+
+    <!-- Encabezado / Navbar -->
+    <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="p-2 bg-sky-500/10 rounded-lg text-sky-400">
+                    <i class="fa-solid fa-microchip text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg leading-none text-white">Informe Técnico de Hardware</h1>
+                    <span class="text-xs text-slate-400">Diagnóstico de Sistema & Análisis</span>
+                </div>
+            </div>
+            <div class="flex items-center space-x-2">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                    <i class="fa-solid fa-lock mr-1.5 text-[10px]"></i> Acceso Restringido
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
+
+        <!-- Banner de Alerta por Seguridad -->
+        <div class="bg-amber-950/40 border border-amber-500/30 rounded-xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div class="flex items-start space-x-3">
+                <div class="p-2 bg-amber-500/20 text-amber-400 rounded-lg shrink-0 mt-0.5 sm:mt-0">
+                    <i class="fa-solid fa-shield-halved text-xl"></i>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-amber-200">Estado del Informe de Software</h3>
+                    <p class="text-xs text-amber-300/80 mt-0.5">
+                        No se permite avanzar en el registro del sistema operativo debido a políticas de seguridad del equipo y falta de claves de acceso.
+                    </p>
+                </div>
+            </div>
+            <span class="text-xs font-mono bg-amber-900/60 text-amber-300 px-3 py-1 rounded-md border border-amber-700/50 self-end sm:self-center">
+                ESTADO: BLOQUEADO
+            </span>
+        </div>
+
+        <!-- Grid Principal de Diagnóstico -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Tarjeta 1: Información General del Sistema -->
+            <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-5 hover:border-sky-500/40 transition">
+                <div class="flex items-center justify-between mb-4 border-b border-slate-700/50 pb-3">
+                    <h2 class="font-semibold text-sky-400 flex items-center gap-2">
+                        <i class="fa-solid fa-desktop"></i> Sistema Base
+                    </h2>
+                    <span class="text-xs bg-slate-700 text-slate-300 px-2 py-0.5 rounded">x64</span>
+                </div>
+                <dl class="space-y-3 text-sm">
+                    <div class="flex justify-between">
+                        <dt class="text-slate-400">Fabricante:</dt>
+                        <dd class="font-medium text-white">ASRock</dd>
+                    </div>
+                    <div class="flex justify-between">
+                        <dt class="text-slate-400">Modelo:</dt>
+                        <dd class="font-medium text-white">H510M-HDV/M.2 SE</dd>
+                    </div>
+                    <div class="flex justify-between">
+                        <dt class="text-slate-400">Tipo de Sistema:</dt>
+                        <dd class="font-medium text-slate-200">PC basado en x64</dd>
+                    </div>
+                    <div class="flex justify-between">
+                        <dt class="text-slate-400">Memoria Física Inst.:</dt>
+                        <dd class="font-medium text-emerald-400">16,0 GB</dd>
+                    </div>
+                </dl>
+            </div>
+
+            <!-- Tarjeta 2: Procesador (CPU) -->
+            <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-5 hover:border-sky-500/40 transition">
+                <div class="flex items-center justify-between mb-4 border-b border-slate-700/50 pb-3">
+                    <h2 class="font-semibold text-sky-400 flex items-center gap-2">
+                        <i class="fa-solid fa-microchip"></i> Procesador
+                    </h2>
+                    <span class="text-xs bg-sky-500/20 text-sky-300 px-2 py-0.5 rounded border border-sky-500/30">11th Gen</span>
+                </div>
+                <dl class="space-y-3 text-sm">
+                    <div>
+                        <dt class="text-slate-400 text-xs mb-1">Nombre del Procesador:</dt>
+                        <dd class="font-medium text-white text-xs bg-slate-900/60 p-2 rounded border border-slate-700/40">
+                            11th Gen Intel(R) Core(TM) i5-11400 @ 2,60GHz
+                        </dd>
+                    </div>
+                    <div class="flex justify-between">
+                        <dt class="text-slate-400">Velocidad Registrada:</dt>
+                        <dd class="font-medium text-slate-200">0,97 GHz a 2,28 GHz</dd>
+                    </div>
+                    <div class="flex justify-between">
+                        <dt class="text-slate-400">Núcleos / Lógicos:</dt>
+                        <dd class="font-medium text-slate-200">6 Núcleos / 12 Hilos</dd>
+                    </div>
+                </dl>
+            </div>
+
+            <!-- Tarjeta 3: Memoria RAM y Ranuras -->
+            <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-5 hover:border-sky-500/40 transition">
+                <div class="flex items-center justify-between mb-4 border-b border-slate-700/50 pb-3">
+                    <h2 class="font-semibold text-sky-400 flex items-center gap-2">
+                        <i class="fa-solid fa-memory"></i> Memoria RAM
+                    </h2>
+                    <span class="text-xs bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded border border-emerald-500/30">3200 MHz</span>
+                </div>
+                <dl class="space-y-3 text-sm">
+                    <div class="flex justify-between">
+                        <dt class="text-slate-400">Capacidad Total Usable:</dt>
+                        <dd class="font-medium text-white">11,6 GB</dd>
+                    </div>
+                    <div class="flex justify-between">
+                        <dt class="text-slate-400">Memoria Disponible:</dt>
+                        <dd class="font-medium text-emerald-400">3,9 GB</dd>
+                    </div>
+                    <div class="flex justify-between">
+                        <dt class="text-slate-400">Ranuras Utilizadas:</dt>
+                        <dd class="font-medium text-slate-200">1 de 2</dd>
+                    </div>
+                    <!-- Barra de Uso de RAM -->
+                    <div class="pt-2">
+                        <div class="flex justify-between text-xs mb-1">
+                            <span class="text-slate-400">Uso aproximado</span>
+                            <span class="text-slate-300 font-mono">66%</span>
+                        </div>
+                        <div class="w-full bg-slate-700 rounded-full h-2">
+                            <div class="bg-sky-500 h-2 rounded-full" style="width: 66%"></div>
+                        </div>
+                    </div>
+                </dl>
+            </div>
+
+        </div>
+
+        <!-- Secciones de Observaciones del Diagnóstico -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+
+            <!-- Diagnóstico de Hardware -->
+            <div class="bg-slate-800/40 border border-slate-700/50 rounded-xl p-5">
+                <div class="flex items-center space-x-3 mb-3">
+                    <i class="fa-solid fa-wrench text-sky-400 text-lg"></i>
+                    <h3 class="font-semibold text-white">Técnico de Hardware</h3>
+                </div>
+                <p class="text-xs text-slate-300 leading-relaxed bg-slate-900/50 p-3 rounded-lg border border-slate-700/30">
+                    Se registraron con éxito las especificaciones físicas de la placa base (ASRock H510M-HDV/M.2 SE), procesador Intel Core i5-11400 y los módulos de memoria RAM instalados.
+                </p>
+            </div>
+
+            <!-- Diagnóstico de Software -->
+            <div class="bg-slate-800/40 border border-slate-700/50 rounded-xl p-5">
+                <div class="flex items-center space-x-3 mb-3">
+                    <i class="fa-solid fa-code text-amber-400 text-lg"></i>
+                    <h3 class="font-semibold text-white">Analista de Software</h3>
+                </div>
+                <p class="text-xs text-amber-200/90 leading-relaxed bg-amber-950/30 p-3 rounded-lg border border-amber-500/20">
+                    <i class="fa-solid fa-triangle-exclamation mr-1 text-amber-400"></i>
+                    No se permite avanzar en el informe porque no se permite entrar al sistema operativo debido a claves de acceso requeridas.
+                </p>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="border-t border-slate-800 bg-slate-950 py-4 text-center text-xs text-slate-500">
+        <p>Informe Técnico de Diagnóstico de Hardware y Software &copy; 2026</p>
+    </footer>
+
+</body>
+</html
